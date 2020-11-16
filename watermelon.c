@@ -18,7 +18,7 @@ void playGame(){
     int number = rand() % 20;
     int answer;
     printf("\nWell, %s im thinking of a number (1 to 20) now what do you think it is?\n", name);
-    while(guessesTaken < 3){
+    while(guessesTaken < 5){
 
 
     printf("Take a guess\n");
@@ -27,16 +27,25 @@ void playGame(){
 
     if(answer < number){
         //if the answer if more 
-        printf("My number is higher than that!!!!!!!!!\n");
+        printf("My number is higher than that!\n");
         scanf("&i", &answer);
     }
      if(answer > number){
         //if the answer is lower
-        printf("My number is lower than that!!!!!!!!!!!!!!!\n");
+        printf("My number is lower than that!\n");
         
     }
      if(answer == number){
-        printf("Correct!\n");
+        printf(R"EOF(
+  _____ ____  _____  _____  ______ _____ _______   _ 
+ / ____/ __ \|  __ \|  __ \|  ____/ ____|__   __| | |
+| |   | |  | | |__) | |__) | |__ | |       | |    | |
+| |   | |  | |  _  /|  _  /|  __|| |       | |    | |
+| |___| |__| | | \ \| | \ \| |___| |____   | |    |_|
+ \_____\____/|_|  \_\_|  \_\______\_____|  |_|    (_)
+
+ )EOF");
+        printf("\n\n\nCorrect! You guessed my number in %i guesses!\n", guessesTaken);
         break;
     }
 
@@ -56,6 +65,14 @@ void playGame(){
         printf("%c",response);
         playGame();
         guessesTaken = 0;
+         printf(R"EOF(
+   ________  __________________ _____   ________   _________    __  _________
+  / ____/ / / / ____/ ___/ ___//  _/ | / / ____/  / ____/   |  /  |/  / ____/
+ / / __/ / / / __/  \__ \\__ \ / //  |/ / / __   / / __/ /| | / /|_/ / __/   
+/ /_/ / /_/ / /___ ___/ /__/ // // /|  / /_/ /  / /_/ / ___ |/ /  / / /___   
+\____/\____/_____//____/____/___/_/ |_/\____/   \____/_/  |_/_/  /_/_____/   
+ )EOF");
+
         
 
     }
